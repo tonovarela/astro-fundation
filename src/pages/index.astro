@@ -1,0 +1,20 @@
+---
+import MainLayout from "../layouts/MainLayout.astro"
+const name="Marco Antonio Estelles Martinez"  
+const title="Home Page"
+---
+<MainLayout title={title} >
+	<h1>{name}</h1>
+         <p>Momento actual {new Date().toLocaleTimeString()}</p>
+		 <p>Momento real : </p>
+		 
+		 
+</MainLayout>
+<script>
+	const currentYear:number = new Date().getFullYear();			
+	const footer = document.querySelector('footer')  as HTMLElement;
+	const secondP = document.querySelectorAll('p')[1] as HTMLElement
+	secondP.append(new Date().toLocaleTimeString());
+	footer.innerText= `© ${currentYear} `;	
+</script>
+
